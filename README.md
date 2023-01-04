@@ -11,3 +11,17 @@
   fancyUI<span class="hljs-operator">=</span>{<span class="hljs-literal">true</span>}
 <span class="hljs-operator">/</span><span class="hljs-operator">&gt;</span>
 </code></div></div></pre><h2>Props</h2><table><thead><tr><th>Prop</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>secret</code></td><td><code>bool</code></td><td><code>false</code></td><td>If <code>true</code>, the input boxes will be masked as passwords.</td></tr><tr><td><code>length</code></td><td><code>number</code></td><td><code>4</code></td><td>The number of input boxes to render.</td></tr><tr><td><code>onComplete</code></td><td><code>func</code></td><td></td><td>A callback function to be invoked when all the input boxes are filled. The values of the input boxes will be passed as an array of strings.</td></tr><tr><td><code>regex</code></td><td><code>regex</code></td><td><code>/^\d$/</code></td><td>A regular expression to be used for input validation. Only input that matches the regex will move the focus to the next input box.</td></tr><tr><td><code>placeholder</code></td><td><code>string</code></td><td><code>""</code></td><td>The placeholder text to be displayed in each input box.</td></tr><tr><td><code>fancyUI</code></td><td><code>bool</code></td><td><code>false</code></td><td>If <code>true</code>, the input boxes will have a more attractive fancy UI design with background gradients and hover effects.</td></tr><tr><td><code>defaultValues</code></td><td><code>array</code></td><td><code>[]</code></td><td>An array of strings to be used as the default values for the input boxes. The array should be the same length as the <code>length</code> prop. If the array is shorter, the remaining input boxes will be empty. If the array is longer, the excess values</td></tr></tbody></table></div>
+
+# Test Cases
+To run the test cases for the PinInput component, you will need to have Jest installed in your project. You can then run yarn test or npm run test from the command line to execute the test suite.
+
+The test cases cover the following scenarios:
+
+1. Rendering the correct number of input elements based on the length prop.
+2. Calling the onComplete prop with the correct values when the last input element is filled.
+3. Limiting paste to the number of remaining input elements.
+4. Not updating the input element if the pasted character does not match the regex prop.
+5. Focusing the previous input element on backspace when the current input element is empty.
+6. Applying the fancyUI styles correctly.
+
+If any of the test cases fail, you will see a clear error message indicating which test case failed and why. This should help you debug and fix any issues with the PinInput component.
